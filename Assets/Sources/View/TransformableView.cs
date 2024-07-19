@@ -12,7 +12,7 @@ public class TransformableView : MonoBehaviour
         _camera = camera;
     }
 
-    public void LateUpdate()
+    private void LateUpdate()
     {
         transform.position = _camera.ViewportToWorldPoint(GetViewportPosition());
         transform.rotation = Quaternion.Euler(0, 0, _model.Rotation);

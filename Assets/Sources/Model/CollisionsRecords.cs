@@ -8,7 +8,7 @@ namespace Asteroids.Model
     {
         private readonly BulletsSimulation _bullets;
         private readonly EnemiesSimulation _enemies;
-        private readonly Score _score;
+        private readonly Score _score = new Score();
 
         public event Action GameEnd;
 
@@ -18,7 +18,6 @@ namespace Asteroids.Model
         {
             _bullets = bullets;
             _enemies = enemies;
-            _score = new Score();
         }
 
         public IEnumerable<Record> Values()

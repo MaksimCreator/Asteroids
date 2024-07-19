@@ -25,11 +25,8 @@ public abstract class TransformableViewFactory<T> : MonoBehaviour
 
     public void Destroy(Simulation<T>.PlacedEntity placedEntity)
     {
-        TransformableView view = _views[placedEntity];
-
+        Destroy(_views[placedEntity].gameObject);
         _views.Remove(placedEntity);
-
-        Destroy(view.gameObject);
     }
 
     protected abstract TransformableView GetTemplate(T entity);
